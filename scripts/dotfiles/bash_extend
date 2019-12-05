@@ -1,0 +1,20 @@
+
+# for rbenv installation
+eval "$(rbenv init -)"
+
+# for nvm installation
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads
+
+# for golang installation
+PATH=$PATH:$HOME/.local/go/bin
+GOPATH=$HOME/golang
+
+# for dotnet installation
+DOTNET_ROOT=$HOME/.local/dotnet
+PATH=$PATH:$HOME/.local/dotnet
+
+# for rust installation
+PATH="$HOME/.cargo/bin:$PATH"
+source $HOME/.cargo/env
