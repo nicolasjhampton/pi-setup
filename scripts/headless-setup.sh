@@ -17,6 +17,9 @@ passwd pi
 # create devs group
 groupadd devs
 
+# create docker group
+groupadd docker
+
 # Create an adminstrative user
 read -p "Please add a sudouser: " username
 adduser "${username}"

@@ -1,21 +1,21 @@
 #!/bin/bash
 
-mkdir $HOME/golang
-mkdir $HOME/golang/src
+SOURCE_DIR='/home/pi'
 
-ln -s /home/pi/.rbenv $HOME/.rbenv
-ln -s /home/pi/.nvm $HOME/.nvm
-ln -s /home/pi/.local $HOME/.local
-ln -s /home/pi/.cargo $HOME/.cargo
-ln -s /home/pi/.rustup $HOME/.rustup
+mkdir $1/golang
+mkdir $1/golang/src
 
-echo ./dotfiles/bash_extend >> $HOME/.bashrc
+ln -s $SOURCE_DIR/.rbenv $1/.rbenv
+ln -s $SOURCE_DIR/.nvm $1/.nvm
+ln -s $SOURCE_DIR/.local $1/.local
+ln -s $SOURCE_DIR/.cargo $1/.cargo
+ln -s $SOURCE_DIR/.rustup $1/.rustup
 
-source $HOME/.profile
+cat $SOURCE_DIR/scripts/dotfiles/bash_extend >> $1/.bashrc
+
+source $1/.profile
 
 # remove flag from nvm config
-nvm use --delete-prefix v13.2.0 --silent
-
-rbenv install $(rbenv install -l | grep -v - | tail -1)
-rbenv global $(rbenv install -l | grep -v - | tail -1)
+# . $1/.nvm/nvm.sh
+# nvm use --delete-prefix v13.2.0 --silent
 

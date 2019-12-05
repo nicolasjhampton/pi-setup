@@ -10,7 +10,7 @@ python3 --version
 pipenv --version
 rbenv --version     
 rbenv versions   
-echo "$(command -v nvm)"
+command -v nvm
 node --version
 go version
 rustup --version
